@@ -42,7 +42,6 @@ WORKDIR /usr/src/pgcopydb
 
 COPY Makefile ./
 COPY GIT-VERSION-GEN ./
-COPY version ./
 COPY ./src/ ./src
 
 RUN make -s clean && make -s -j8 install
@@ -72,3 +71,5 @@ RUN adduser docker sudo
 COPY --from=build /usr/lib/postgresql/13/bin/pgcopydb /usr/local/bin
 
 USER docker
+
+CMD [ "tail", "-f", "/dev/null" ]
