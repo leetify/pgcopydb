@@ -97,7 +97,7 @@ stream_init_specs(StreamSpecs *specs,
 					"include-schemas",
 					"include-transaction",
 					"include-types",
-					"filter-tables"
+					"add-tables"
 				},
 				.values = {
 					"2",
@@ -105,7 +105,7 @@ stream_init_specs(StreamSpecs *specs,
 					"true",
 					"true",
 					"true",
-					"pgcopydb.*"
+					"public.*"
 				}
 			};
 
